@@ -17,7 +17,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(IceBlock.class)
 public abstract class IceMixin {
     @Shadow
-    abstract void melt(BlockState state, Level level, BlockPos pos);
+    protected abstract void melt(BlockState state, Level level, BlockPos pos);
 
     @Inject(method = "randomTick", at = @At("HEAD"))
     public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random, CallbackInfo ci) {
